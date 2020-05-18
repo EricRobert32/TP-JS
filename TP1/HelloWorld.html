@@ -13,23 +13,71 @@
     Welcome to hello world web page, more information <a href="https://fr.wikipedia.org/wiki/Hello_world">here</a>
 </p>
 <div class="divImg">
-<img src="Image/Philorator.png" alt="Philosorus">
+    <img src="Image/Philorator.png" alt="Philosorus">
+
+
+    <audio controls="true" src="jebaited-song.mp4">JEBAITED</audio>
 </div>
+<input type="button" id="playMusicButton" name="playMusicIntroduction" value="Play the EPIC Music">
+<br>
 
-<audio controls="true" src="jebaited-song.mp4">JEBAITED</audio>
-
-<input type="button" id="playMuisicButton" name="playMusicIntroduction" value="Play the EPIC Music">
+<input type="radio" value="aalainite" name="composer" id="rad1" onre>
+<label>Ailainite</label>
+<br>
+<input type="radio" value="Nobuo Uematsu" name="composer" id="rad2">
+<label>Nobuo Uematsu</label>
+<br>
+<input type="radio" value="Skrux" name="composer" id="rad3">
+<label>Skrux</label>
+<br>
+<input type="button" value="Save" onclick="register()">
+<input type="button" value="Load" onclick="load()">
 
 </body>
 <footer>
     Copyright Robert Eric <a href="https://creativecommons.org/licenses/by/4.0/">LICENCE</a>
 </footer>
 
-<script>
-    document.getElementById("playMuisicButton").addEventListener("click",event => {
-        var song = document.getElementById("playMuisicButton");
-        song.play();
-    })
+<script type="text/javascript">
+    document.getElementById("playMusicButton").onclick = function (event) {
+        var song = document.querySelector('audio');
+        if (song.paused) {
+            song.play();
+
+
+        } else {
+            song.pause();
+        }
+
+    }
+
+    function register() {
+        if (document.getElementById("rad1").checked) {
+            localStorage.setItem("composer", "1");
+        }
+        if (document.getElementById("rad2").checked) {
+            localStorage.setItem("composer", "2");
+        }
+        if (document.getElementById("rad3").checked) {
+            localStorage.setItem("composer", "3");
+
+        }
+    }
+
+    function load(){
+        if (localStorage.getItem("composer")=="1"){
+            document.getElementById("rad1").checked=true;
+        }
+        if (localStorage.getItem("composer")=="2"){
+            document.getElementById("rad2").checked=true;
+        }
+        if (localStorage.getItem("composer")=="3"){
+            document.getElementById("rad3").checked=true;
+        }
+
+    }
+
+    // DES ARTISTE HTMLISE
 
 
 </script>
