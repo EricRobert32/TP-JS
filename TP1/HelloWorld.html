@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <link rel="stylesheet" type="text/css" href="HelloWorld.css"> -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>HelloWorld</title>
+</head>
+<body>
+<h1>HELLO WORLD</h1>
+
+<p>
+    Welcome to hello world web page, more information <a href="https://fr.wikipedia.org/wiki/Hello_world">here</a>
+</p>
+<div class="divImg">
+<img src="Image/Philorator.png" alt="Philosorus">
+</div>
+
+<audio controls="true" src="jebaited-song.mp4">JEBAITED</audio>
+
+<input type="button" id="playMuisicButton" name="playMusicIntroduction" value="Play the EPIC Music">
+
+</body>
+<footer>
+    Copyright Robert Eric <a href="https://creativecommons.org/licenses/by/4.0/">LICENCE</a>
+</footer>
+
+<script>
+    document.getElementById("playMuisicButton").addEventListener("click",event => {
+        var song = document.getElementById("playMuisicButton");
+        song.play();
+    })
+
+
+</script>
+</html>
