@@ -1,0 +1,32 @@
+html>
+<head>
+    <title>Person test</title>
+</head>
+<body>
+<h1>Hello person!</h1>
+
+<form>
+    Please fill this form: <br>
+    Name: <input type="text" id="nameInput" value="" placeholder="Name"/> <br>
+    Email: <input type="email" id="emailInput" value="" placeholder="Email address"/> <br>
+    Birth date: <input type="date" id="birthDateInput" value="" placeholder="Birth date"/> <br>
+    <input type="button" value="Validate" id="submitButton"/>
+</form>
+
+<div id="result">
+</div>
+
+<script type="module">
+    import {Person, computeDaysSinceBirth} from "./person.js";
+
+    document.getElementById("submitButton").addEventListener("click", (e) => {
+        let name = document.getElementById("nameInput").value;
+        let date = document.getElementById("birthDateInput").valueAsDate;
+        let email = document.getElementById("emailInput").value;
+
+        document.getElementById("result").innerHTML = "<p> Name : "+name +" // mail: "+email+ "  // date of birth "+ date ;
+
+    });
+</script>
+</body>
+</html>
